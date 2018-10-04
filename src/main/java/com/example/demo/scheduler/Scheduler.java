@@ -12,36 +12,23 @@ import org.springframework.stereotype.Component;
 
     @Scheduled(cron = "${scheduling.job.cron}")
 
-    public void cronJobSch() {  //
-
-
+    public void cronJobSch() {//run after every 5 seconds
         LOGGER.info("Krishna");
-
-           /* System.out.println("Java cron job expression:: " + new Date());
-            System.out.println("#######Mai##########Chal########Gyi######Hu####");
-        */
     }
 
     @Scheduled(fixedRateString = "${myRate}")
-    //@Scheduled(fixedRateString ="${console.myRate}", initialDelay=5000)
 
-    public void fixedRateSch() {
+    public void fixedRateSch() {//takes 3 sec delay to come in action
 
         LOGGER.info("It is printed when fixedRateSch method is invoked");
 
-        /*System.out.println("Fixed Rate scheduler:: " + new Date() + "Hello");
-        System.out.println("#######Mai##########Chal########Gyi######Hu####");
-    */}
+    }
 
     @Scheduled(fixedDelayString = "${scheduling.job.fixedDelay}" , initialDelayString = "${scheduling.job.initialDelay}")
-    public void fixedDelaySch() {
+    public void fixedDelaySch() { //takes 5 sec delay to come in action with an initial delay of 5 sec
 
         LOGGER.info("It is printed when fixedDelayString method is invoked");
 
-        /*System.out.println("Fixed Delay scheduler:: " + new Date() + "hello ");
-        System.out.println("#######Mai##########Chal########Gyi######Hu####");
-
-    */
     }
 }
 
